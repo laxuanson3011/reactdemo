@@ -1,32 +1,29 @@
-
-//import logo from './logo.svg';
-import './App.css';
 import React, { Component } from 'react';
-import Headder from './components/Headder';
+import './App.css';
+import{ BrowserRouter as Router, Link } from 'react-router-dom';
+import Home from './components/Home';
 import Product from './components/Product';
 
-class App extends Component {
+class App extends Component{
   render() {
     return (
-      <div>
-        <Headder />
-        <div className="row">
-            <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <Product />
-            </div>
-            <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <Product />
-            </div>
-            <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <Product />
-            </div>
-            <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <Product />
-            </div>
-        </div>
+      <Router>
+        <div className="App">
+        {/*MENU*/}
+        <nav className="navbar navbar-inverse">
         
+          <ul className="nav navbar-nav">
+            <li className="active">
+              <Link to="/" className="my-link">TRANG CHU</Link>
+            </li>
+            <li>
+              <Link to="/product" className="my-link">SAN PHAM</Link>
+            </li>
+          </ul>
+        </nav>
+      
       </div>
-       
+      </Router>
     );
   }
 }
